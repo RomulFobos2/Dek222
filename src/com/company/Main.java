@@ -10,19 +10,20 @@ public class Main {
         BufferedReader bufferedReader_1 = new BufferedReader(new FileReader("1.txt"));
         String s_1 = bufferedReader_1.readLine().trim();
         while (s_1 != null){
-            BufferedReader bufferedReader_2 = new BufferedReader(new FileReader("21.txt"));
-            String s_2 = bufferedReader_2.readLine().trim();
+            BufferedReader bufferedReader_2 = new BufferedReader(new FileReader("2.txt"));
+            String s_2 = bufferedReader_2.readLine();
             boolean check = false;
             while (s_2 != null){
-                if(s_1.equals(s_2)){
+                if(s_1.trim().equals(s_2.trim())){
                     check = true;
                     break;
                 }
-                s_2 = bufferedReader_2.readLine().trim();
+                s_2 = bufferedReader_2.readLine();
             }
-            if(check = false){
+            if(!check){
                 System.out.println(s_1);
             }
+            s_1 = bufferedReader_1.readLine();
         }
     }
 }
